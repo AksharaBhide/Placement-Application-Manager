@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Company",
+    "email": "company@test.com",
+    "role": "company",
+    "salt": "ac07ae6dcf4c8a629f1f3216a2d9ff7d",
+    "passwordHash": "e417ca20235e0ae1eb94afce8e2bdb7d182c346447a9f58589df06f7e8e471cb6a12b87feecfbf16cdec9b1bafb3d7d622ca25862d5c4d62361dc029d963bef9"
+  },
+  {
+    "name": "Student",
+    "email": "student@test.com",
+    "role": "student",
+    "salt": "da614197d6465e2fbcf6c1e100201b09",
+    "passwordHash": "9dda254b1272d6175b421c05e6ade36b0db92a868f2b81749007c0c7652fc28d059e663a41e43f80b99f328da37683909a8293c00a37c2b4cdd60b9de3925061"
+  }
+]

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Placement Application Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="authSection" class="auth-section">
+        <div class="auth-card">
+            <p class="eyebrow">PLACEMENT APPLICATION MANAGER</p>
+            <h1>Welcome</h1>
+            <p id="authPrompt">Choose how you want to use the portal.</p>
+
+            <div id="roleChoices" class="role-choices">
+                <button type="button" onclick="chooseRole('student')">Student</button>
+                <button type="button" onclick="chooseRole('company')">Company</button>
+            </div>
+
+            <div id="authFormPanel" hidden>
+                <button type="button" class="back-button" onclick="backToRoles()">&larr; Change account type</button>
+                <h2 id="authHeading">Student sign in</h2>
+
+                <div class="auth-tabs">
+                    <button type="button" id="signinTab" class="active" onclick="setAuthMode('signin')">Sign in</button>
+                    <button type="button" id="signupTab" onclick="setAuthMode('signup')">Sign up</button>
+                </div>
+
+                <form id="authForm" onsubmit="authenticate(event)">
+                    <label id="nameField" hidden>
+                        Name
+                        <input id="authName" type="text" autocomplete="name">
+                    </label>
+                    <label>
+                        Email
+                        <input id="authEmail" type="email" autocomplete="email" required>
+                    </label>
+                    <label>
+                        Password
+                        <input id="authPassword" type="password" autocomplete="current-password" required>
+                    </label>
+                    <p id="authMessage" class="auth-message" role="alert"></p>
+                    <button id="authSubmit" class="submit-button" type="submit">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <header id="appHeader" hidden>
+        <h1>Placement Application Manager</h1>
+        <button type="button" onclick="signOut()">Sign out</button>
+    </header>
+
+    <section id="studentSection" hidden>
+
+        <h2>Student Portal</h2>
+
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Enter your name"
+        >
+
+        <input
+            type="email"
+            id="studentEmail"
+            placeholder="Enter your email"
+        >
+
+        <button onclick="loadJobs()">View Jobs</button>
+
+        <h3>Available Jobs</h3>
+
+        <div id="jobsContainer"></div>
+
+        <h3>My Applications</h3>
+
+        <div id="applicationsContainer"></div>
+
+    </section>
+
+    <section id="companySection" hidden>
+
+        <h2>Company Portal</h2>
+
+        <h3>Post a Job</h3>
+
+        <input
+            type="text"
+            id="companyName"
+            placeholder="Company Name"
+        >
+
+        <input
+            type="text"
+            id="jobTitle"
+            placeholder="Job Title"
+        >
+
+        <input
+            type="text"
+            id="jobDescription"
+            placeholder="Job Description"
+        >
+
+        <input
+            type="text"
+            id="jobLocation"
+            placeholder="Location"
+        >
+
+        <button onclick="postJob()">Post Job</button>
+
+
+        <h3>Applications</h3>
+
+        <div id="companyApplications"></div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
